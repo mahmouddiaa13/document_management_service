@@ -19,7 +19,7 @@ This document management service allows you to store, retrieve, and search natur
 2. Run Docker Compose to start Elasticsearch, Kibana and fastapi_app containers:
 
     ```bash
-    docker-compose -f docker-compose.yml up --build
+    docker compose -f docker-compose.yml up --build
 
 3. Run Docker Compose to start Elasticsearch and Kibana containers:
 ## For accessing Swagger UI:
@@ -32,9 +32,6 @@ This document management service allows you to store, retrieve, and search natur
 3. Access the Docker Container    
    ```bash
     docker exec -it fastapi_app /bin/bash
-4. Activate the Virtual Environment    
+4. Run Pytest  
    ```bash
-    source venv/bin/activate
-5. Run Pytest  
-   ```bash
-    pytests
+    pytest
