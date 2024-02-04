@@ -1,0 +1,10 @@
+from enum import Enum
+
+
+class DBTYPES(Enum):
+    MONGO = "MONGO"
+    MYSQL = "MYSQL"
+    ELASTICSEARCH = "ELASTICSEARCH"
+    SQLSERVER = "SQLSERVER"
+    POSTGRESSQL = "POSTGRESSQL"
+    CASSANDRA = "CASSANDRA"

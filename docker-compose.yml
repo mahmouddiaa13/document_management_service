@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
+    container_name: elasticsearch
+    environment:
+      - "discovery.type=single-node"
+      - "ELASTIC_PASSWORD=very$trongP@ssw0rd!"
+    ports:
+      - "9200:9200"
+    networks:
+      - es-net
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.10.0
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - es-net
+
+  fastapi_app:
+    build: .
+    container_name: fastapi_app
+    ports:
+      - "5757:5757"
+    networks:
+      - es-net
+
+networks:
+  es-net:
+    driver: bridge
+
+volumes:
+  es-data:
+    driver: local
