@@ -13,8 +13,8 @@ This document management service allows you to store, retrieve, and search natur
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone <repository_url>
-   cd document-management-service
+   git clone https://github.com/mahmouddiaa13/document_management_service.git
+   cd document_management_service
 
 2. Run Docker Compose to start Elasticsearch, Kibana and fastapi_app containers:
 
